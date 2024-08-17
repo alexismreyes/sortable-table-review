@@ -1,4 +1,3 @@
-import React from "react";
 import {Person} from "../solution/People.ts";
 import "../assets/PeopleTable.css";
 import "../assets/Common.css";
