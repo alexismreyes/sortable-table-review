@@ -1,4 +1,4 @@
-import {alexisObj, donnyObj, mattObj, miroslavObj, Person, rockyObj} from "./People.ts";
+import {alexisObj, donnyObj, mattObj, miroslavObj, Person, rockyObj} from "./People";
 
 export const peopleArray: Person[] = [
     rockyObj,miroslavObj,donnyObj,mattObj,alexisObj
@@ -46,15 +46,19 @@ export const sortByProp = (peopleArr: Person[], prop: keyof Person): Person[] =>
 
 //Using the sortByProp method
 
+
 const arraySortedByName = sortByProp(peopleArray, 'Name');
 const arraySortedByFavFood = sortByProp(peopleArray, 'Favorite Food');
 const arraySortedByMovie = sortByProp(peopleArray, 'Favorite Movie');
 
-console.log("peopleArray sorted by Name: ",arraySortedByName);
-console.log("peopleArray sorted by FavFood: ",arraySortedByFavFood);
-console.log("peopleArray sorted by FavMovie: ",arraySortedByMovie);
 
-const getObjectKeys = (obj: Person): string[] =>{
+if(process.env.NODE_ENV === 'production'){
+    console.log("peopleArray sorted by Name: ",arraySortedByName);
+    console.log("peopleArray sorted by FavFood: ",arraySortedByFavFood);
+    console.log("peopleArray sorted by FavMovie: ",arraySortedByMovie);
+}
+
+export const getObjectKeys = (obj: Person): string[] =>{
     return Object.keys(obj);
 }
 
