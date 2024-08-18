@@ -78,9 +78,35 @@ describe('Testing for Solution.ts', () => {
       },
     ];
 
+    const peopleArraySortedByStatus: Person[] = [
+      {
+        Name: 'Alicia',
+        'Favorite Food': 'Pupusas',
+        'Favorite Movie': 'Pablo Escobar',
+        Status: 'Inactive',
+      },
+      {
+        Name: 'Juan',
+        'Favorite Food': 'Tamales',
+        'Favorite Movie': 'El padrino',
+        Status: 'Active',
+      },
+      {
+        Name: 'Pedro',
+        'Favorite Food': 'Huevos fritos',
+        'Favorite Movie': 'Cantinflas',
+        Status: 'Active',
+      },
+    ];
+
     it('Should return an array sorted by Name prop', () => {
       const sortedArrayByName = sortByProp(peopleArray, 'Name');
       expect(sortedArrayByName).toEqual(peopleArraySortedByName);
+    });
+
+    it('Should return an array sorted by Status prop', () => {
+      const sortedArrayByStatus = sortByProp(peopleArray, 'Status');
+      expect(sortedArrayByStatus).toEqual(peopleArraySortedByStatus);
     });
 
     it('Should not mutate the original array', () => {
