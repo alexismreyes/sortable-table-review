@@ -1,0 +1,31 @@
+name: SORTABLE CI
+
+on:
+  push:
+    paths:
+      - "./**"
+      - ".github/workflows/sortable-ci.yml"
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+
+  unit-test: # realizanso pruebas unitariasal books.service.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ./package-lock.json
+      - name: install
+        shell: bash
+        run: npm ci
+      - name: run unit test
+        shell: bash
+        run: npm run test
