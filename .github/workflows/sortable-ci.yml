@@ -3,7 +3,8 @@ name: SORTABLE CI
 on:
   push:
     paths:
-      - './**'
+      #- './**'
+      - '**'
       - '.github/workflows/sortable-ci.yml'
 
 defaults:
