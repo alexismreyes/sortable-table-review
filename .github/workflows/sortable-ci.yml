@@ -11,7 +11,7 @@ defaults:
     working-directory: ./
 
 jobs:
-  unit-test: # realizanso pruebas unitariasal books.service.js
+  unit-test: # realizando pruebas unitarias
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
         shell: bash
         run: npm run test
 
-  deploy:
+  deploy: # realizando despligue luego de las pruebas unitarias
     needs: unit-test
     runs-on: ubuntu-latest
     steps:
