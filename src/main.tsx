@@ -7,9 +7,12 @@ import Sortable from './components/Sortable.tsx';
 import Dev from './components/Dev.tsx';
 import Page404 from './components/Page404.tsx';
 
+const basename =
+  process.env.NODE_ENV === 'production' ? '/sortable-table-review/' : '/';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
