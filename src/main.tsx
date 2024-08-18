@@ -7,8 +7,11 @@ import Sortable from './components/Sortable.tsx';
 import Dev from './components/Dev.tsx';
 import Page404 from './components/Page404.tsx';
 
+/* const basename =
+  process.env.NODE_ENV === 'production' ? '/sortable-table-review/' : '/'; */
+
 const basename =
-  process.env.NODE_ENV === 'production' ? '/sortable-table-review/' : '/';
+  import.meta.env.VITE_ENV === 'production' ? '/sortable-table-review/' : '/';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -18,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route index element={<Home />} />
           <Route path="/sortable" element={<Sortable />} />
           <Route path="/dev" element={<Dev />} />
-          <Route path="*" element={<Page404 />} />
+          <Route path="/*" element={<Page404 />} />
         </Route>
       </Routes>
     </BrowserRouter>
