@@ -12,9 +12,13 @@
 
 **_- React router dom 6_**
 
+**- Jest**
+
 ### Features:
 
 This project creates an array of objects which are initially logged in console sorted by each property, next it renders a table in a react component which is able to be sorted trough any of its propertys listed in a select list or using the column headers which are the same time the object's properties.
+
+It also run some Unit testing using jest. This project includes a GitHub workflow file to run these test prior to deploy it in GH Pages. (pipeline)
 
 ### Steps to install:
 
@@ -28,4 +32,4 @@ This project creates an array of objects which are initially logged in console s
 
 4.  yarn dev
 
-5.  open the location at the browser (default http://localhost:5173)
+5.  open the location at the browser (default http://localhost:5174)
