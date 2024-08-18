@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route index element={<Home />} />
           <Route path="/sortable" element={<Sortable />} />
           <Route path="/dev" element={<Dev />} />
-          <Route path="/*" element={<Page404 />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
     </BrowserRouter>
