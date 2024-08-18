@@ -22,14 +22,12 @@ It also run some Unit testing using jest. This project includes a GitHub workflo
 
 ### Steps to install:
 
-1.  git clone https://github.com/alexismreyes/sortable-table.git
+1.  git clone https://github.com/alexismreyes/sortable-table-review.git
 
-2.  cd sortable-table
+2.  cd sortable-table-review
 
-3.  yarn
+3.  npm i
 
-(to install dependencies / install yarn if not installed -> sudo npm install -g yarn)
-
-4.  yarn dev
+4.  npm run dev
 
 5.  open the location at the browser (default http://localhost:5174)
