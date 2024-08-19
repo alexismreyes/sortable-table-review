@@ -1,11 +1,5 @@
-import {
-  alexisObj,
-  donnyObj,
-  mattObj,
-  miroslavObj,
-  Person,
-  rockyObj,
-} from './People';
+import { Person } from '../interface/interface';
+import { alexisObj, donnyObj, mattObj, miroslavObj, rockyObj } from './People';
 
 export const peopleArray: Person[] = [
   rockyObj,
