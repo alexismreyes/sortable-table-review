@@ -1,5 +1,5 @@
 import '../solution/Solution.ts';
-import { ChangeEvent, useEffect, useReducer, useState } from 'react';
+import { ChangeEvent, useEffect, useReducer } from 'react';
 import { Person } from '../solution/People.ts';
 import { peopleArray, personKeys, sortByProp } from '../solution/Solution.ts';
 import PeopleTable from './PeopleTable.tsx';
