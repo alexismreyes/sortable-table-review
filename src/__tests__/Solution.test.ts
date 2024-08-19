@@ -1,5 +1,5 @@
 import { getObjectKeys, sortByProp } from '../solution/Solution';
-import { Person } from '../solution/People';
+import { Person } from '../interface/interface';
 
 describe('Testing for Solution.ts', () => {
   describe('Testing getObjectKeys', () => {

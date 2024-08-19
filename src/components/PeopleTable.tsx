@@ -1,4 +1,4 @@
-import { Person } from '../solution/People.ts';
+import { Person } from '../interface/interface';
 import '../assets/PeopleTable.css';
 import '../assets/Common.css';
 

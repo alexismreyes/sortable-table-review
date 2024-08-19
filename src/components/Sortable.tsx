@@ -1,9 +1,10 @@
 import '../solution/Solution.ts';
 import { ChangeEvent, useEffect, useReducer } from 'react';
-import { Person } from '../solution/People.ts';
+import { Person } from '../interface/interface';
 import { peopleArray, personKeys, sortByProp } from '../solution/Solution.ts';
 import PeopleTable from './PeopleTable.tsx';
 import '../assets/Sortable.css';
+import { Action, sortableState } from '../interface/interface.ts';
 
 const reducer = (state: sortableState, action: Action) => {
   switch (action.type) {
@@ -30,19 +31,6 @@ const initialState: sortableState = {
   selectedKey: 'Name',
   sortOrder: 'asc',
 };
-
-interface sortableState {
-  people: Person[];
-  sortedPeople: Person[];
-  selectedKey: keyof Person;
-  sortOrder: 'asc' | 'desc';
-}
-
-type Action =
-  | { type: 'UPDATE_PEOPLE'; payload: Person[] }
-  | { type: 'UPDATE_SORTEDPEOPLE'; payload: Person[] }
-  | { type: 'UPDATE_SELECTEDKEY'; payload: keyof Person }
-  | { type: 'UPDATE_SORTORDER'; payload: 'asc' | 'desc' };
 
 const Sortable = () => {
   //useState() approach for simplicity
@@ -104,7 +92,7 @@ const Sortable = () => {
     sortPeople(data.selectedKey, data.sortOrder);
   }, [data.selectedKey, data.sortOrder, data.people]);
 
-  const handleSort = (key: keyof Person) => {
+  const handleSort = (key: keyof Person): void => {
     const order =
       key === data.selectedKey && data.sortOrder === 'asc' ? 'desc' : 'asc';
 
