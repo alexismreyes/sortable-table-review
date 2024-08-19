@@ -2,6 +2,8 @@ name: SORTABLE CI
 
 on:
   push:
+    branches:
+      - master
     paths:
       #- './**'
       - '**'
