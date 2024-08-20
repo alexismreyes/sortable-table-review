@@ -4,6 +4,7 @@ import { Person } from '../solution/People.ts';
 import { peopleArray, personKeys, sortByProp } from '../solution/Solution.ts';
 import PeopleTable from './PeopleTable.tsx';
 import '../assets/Sortable.css';
+import PeopleFilter from '../hoc/PeopleFilter.tsx';
 
 const Sortable = () => {
   const [people, setPeople] = useState<Person[]>([]);
@@ -36,11 +37,14 @@ const Sortable = () => {
     setSortOrder('asc');
   };
 
+  const FilteredPeopleTable = PeopleFilter(PeopleTable); //use of the HOC PeopleFilter
+
   return (
     <>
       <div className="table-container-sort">
         <div className="table-wrapper">
-          <PeopleTable people={sortedPeople} handleSort={handleSort} />
+          {/* <PeopleTable people={sortedPeople} handleSort={handleSort} /> */}
+          <FilteredPeopleTable people={sortedPeople} handleSort={handleSort} />
         </div>
         <div className="select-container">
           <p>
