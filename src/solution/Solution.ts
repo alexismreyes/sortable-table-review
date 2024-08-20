@@ -26,9 +26,12 @@ const activePeople: Person[] = peopleArray.filter(
 
 if (activePeople.length > 0) {
   activePeople.forEach((person) => {
-    console.log(
-      `${person.Name} - ${person.Date} - ${person['Favorite Movie']}`
-    );
+    if (process.env.NODE_ENV === 'production') {
+      //to hide console.log from testing
+      console.log(
+        `${person.Name} - ${person.Date} - ${person['Favorite Movie']}`
+      );
+    }
   });
 } else {
   console.log('There are no Active people!!');
@@ -65,6 +68,7 @@ const arraySortedByFavFood = sortByProp(peopleArray, 'Favorite Food');
 const arraySortedByMovie = sortByProp(peopleArray, 'Favorite Movie');
 
 if (process.env.NODE_ENV === 'production') {
+  //to hide console.log from testing
   console.log('peopleArray sorted by Name: ', arraySortedByName);
   console.log('peopleArray sorted by FavFood: ', arraySortedByFavFood);
   console.log('peopleArray sorted by FavMovie: ', arraySortedByMovie);

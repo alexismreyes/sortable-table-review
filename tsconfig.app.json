@@ -21,7 +21,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* added for testing dom */
+    "types": ["@testing-library/jest-dom", "jest", "node"]
   },
   "include": ["src"]
 }
